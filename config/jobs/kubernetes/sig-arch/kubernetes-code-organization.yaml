@@ -28,7 +28,7 @@ presubmits:
         - ./../test-infra/experiment/dependencies/update-dependencies-and-run-tests.sh --test-mode kind
         env:
         - name: LABEL_FILTER
-          value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+          value: "Feature: isEmpty && !Slow && !Flaky"
         - name: PARALLEL
           value: "true"
         # we need privileged mode in order to do docker in docker
@@ -119,7 +119,7 @@ presubmits:
         - curl -sSL https://kind.sigs.k8s.io/dl/latest/linux-amd64.tgz | tar xvfz - -C "${PATH%%:*}/" && e2e-k8s.sh
         env:
         - name: LABEL_FILTER
-          value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+          value: "Feature: isEmpty && !Slow && !Flaky"
         - name: PARALLEL
           value: "true"
         - name: GO_VERSION
@@ -220,7 +220,7 @@ periodics:
       - ./../test-infra/experiment/dependencies/update-dependencies-and-run-tests.sh --test-mode kind
       env:
       - name: LABEL_FILTER
-        value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+        value: "Feature: isEmpty && !Slow && !Flaky"
       - name: PARALLEL
         value: "true"
       # we need privileged mode in order to do docker in docker
@@ -310,7 +310,7 @@ periodics:
       - curl -sSL https://kind.sigs.k8s.io/dl/latest/linux-amd64.tgz | tar xvfz - -C "${PATH%%:*}/" && e2e-k8s.sh
       env:
       - name: LABEL_FILTER
-        value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+        value: "Feature: isEmpty && !Slow && !Flaky"
       - name: PARALLEL
         value: "true"
       - name: GO_VERSION

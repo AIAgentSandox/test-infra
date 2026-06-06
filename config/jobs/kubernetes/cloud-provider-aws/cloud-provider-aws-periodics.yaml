@@ -158,7 +158,7 @@ periodics:
            -- \
            --use-built-binaries true \
            --parallel=30 \
-           --skip-regex='\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]'
+           --skip-regex='\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]'
       env:
         - name: USE_DOCKERIZED_BUILD
           value: "true"

@@ -267,7 +267,7 @@ periodics:
       - name: KIND_CLUSTER_LOG_LEVEL
         value: "6"
       - name: LABEL_FILTER
-        value: Conformance && !Slow && !Disruptive && !Flaky
+        value: Conformance && !Slow && !Flaky
       - name: PARALLEL
         value: "true"
       image: gcr.io/k8s-staging-test-infra/krte:v20260601-ff716d044c-1.36
@@ -1025,7 +1025,7 @@ periodics:
       - --gcp-node-image=gci
       - --extract=ci/latest-1.36
       - --timeout=120m
-      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
         --minStartupPods=8
       - --ginkgo-parallel=30
       - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
@@ -1113,7 +1113,7 @@ periodics:
       - --extract=ci/latest-1.36
       - --timeout=660m
       - --ginkgo-parallel=1
-      - --test_args=--ginkgo.focus=\[Serial\]|\[Disruptive\] --ginkgo.skip=\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]
+      - --test_args=--ginkgo.focus=\[Serial\] --ginkgo.skip=\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]
         --minStartupPods=8
       command:
       - runner.sh
@@ -1156,7 +1156,7 @@ periodics:
       - --gcp-node-image=gci
       - --extract=ci/latest-1.36
       - --timeout=150m
-      - --test_args=--ginkgo.focus=\[Slow\] --ginkgo.skip=\[Driver:.gcepd\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:([^L].*|L[^o].*|Lo[^a].*|Loa[^d].*)\]
+      - --test_args=--ginkgo.focus=\[Slow\] --ginkgo.skip=\[Driver:.gcepd\]|\[Serial\]|\[Flaky\]|\[Feature:([^L].*|L[^o].*|Lo[^a].*|Loa[^d].*)\]
         --minStartupPods=8
       - --ginkgo-parallel=30
       command:
@@ -1542,7 +1542,7 @@ periodics:
         -C "${PATH%%:*}/" && e2e-k8s.sh
       env:
       - name: LABEL_FILTER
-        value: 'Feature: isEmpty && !Slow && !Disruptive && !Flaky'
+        value: 'Feature: isEmpty && !Slow && !Flaky'
       - name: PARALLEL
         value: "true"
       image: gcr.io/k8s-staging-test-infra/krte:v20260601-ff716d044c-1.36
@@ -1589,7 +1589,7 @@ periodics:
       - name: IP_FAMILY
         value: ipv6
       - name: LABEL_FILTER
-        value: 'Feature: isEmpty && !Slow && !Disruptive && !Flaky'
+        value: 'Feature: isEmpty && !Slow && !Flaky'
       - name: PARALLEL
         value: "true"
       image: gcr.io/k8s-staging-test-infra/krte:v20260601-ff716d044c-1.36
@@ -1828,7 +1828,7 @@ presubmits:
         - name: GOFLAGS
           value: -tags=fieldsv1string
         - name: LABEL_FILTER
-          value: 'Feature: isEmpty && !Slow && !Disruptive && !Flaky'
+          value: 'Feature: isEmpty && !Slow && !Flaky'
         - name: PARALLEL
           value: "true"
         image: gcr.io/k8s-staging-test-infra/krte:v20260601-ff716d044c-1.36
@@ -1871,7 +1871,7 @@ presubmits:
           --test-mode kind
         env:
         - name: LABEL_FILTER
-          value: 'Feature: isEmpty && !Slow && !Disruptive && !Flaky'
+          value: 'Feature: isEmpty && !Slow && !Flaky'
         - name: PARALLEL
           value: "true"
         image: gcr.io/k8s-staging-test-infra/krte:v20260601-ff716d044c-1.36
@@ -1949,7 +1949,7 @@ presubmits:
           - -C "${PATH%%:*}/" && e2e-k8s.sh
         env:
         - name: LABEL_FILTER
-          value: 'Feature: isEmpty && !Slow && !Disruptive && !Flaky'
+          value: 'Feature: isEmpty && !Slow && !Flaky'
         - name: PARALLEL
           value: "true"
         - name: GO_VERSION
@@ -2036,7 +2036,7 @@ presubmits:
         - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHLIST_INCONSISTENCY_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHCACHE_CONSISTENCY_CHECKER=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=120m
         command:
@@ -2085,7 +2085,7 @@ presubmits:
         - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHLIST_INCONSISTENCY_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHCACHE_CONSISTENCY_CHECKER=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -2135,7 +2135,7 @@ presubmits:
         - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHLIST_INCONSISTENCY_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHCACHE_CONSISTENCY_CHECKER=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -2196,7 +2196,7 @@ presubmits:
         - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHLIST_INCONSISTENCY_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHCACHE_CONSISTENCY_CHECKER=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -2249,7 +2249,7 @@ presubmits:
             --test=kops \
             -- \
             --ginkgo-args="--debug" \
-            --skip-regex="\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|\[KubeUp\]" \
+            --skip-regex="\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]|\[KubeUp\]" \
             --timeout=80m \
             --use-built-binaries=true \
             --parallel=30
@@ -2306,7 +2306,7 @@ presubmits:
         - --gcp-region=us-central1
         - --ginkgo-parallel=1
         - --provider=gce
-        - --test_args=--ginkgo.focus=\[Serial\]|\[Disruptive\] --ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.focus=\[Serial\] --ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=500m
         command:
@@ -2382,61 +2382,6 @@ presubmits:
     branches:
     - release-1.36
     cluster: k8s-infra-prow-build
-    context: pull-kubernetes-e2e-gce-disruptive-canary
-    decorate: true
-    decoration_config:
-      timeout: 10h30m0s
-    extra_refs:
-    - base_ref: master
-      org: kubernetes
-      path_alias: k8s.io/kops
-      repo: kops
-    labels:
-      preset-dind-enabled: "true"
-      preset-k8s-ssh: "true"
-      preset-storage-e2e-service-account: "true"
-    name: pull-kubernetes-e2e-gce-disruptive-canary
-    optional: true
-    path_alias: k8s.io/kubernetes
-    spec:
-      containers:
-      - args:
-        - bash
-        - -c
-        - |
-          ARGS="--set=spec.containerd.runc.version=1.1.12  --set=spec.packages=nfs-common --set=spec.containerd.version=1.7.13"
-          make -C $GOPATH/src/k8s.io/kops test-e2e-install
-          kubetest2 kops -v=6 --cloud-provider=gce --up --down --build \
-            --build-kubernetes=true --target-build-arch=linux/amd64 \
-            --admin-access=0.0.0.0/0 \
-            --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci.txt \
-            --create-args "$ARGS --node-count=3 --networking=kubenet --gce-service-account=default --set=spec.nodeProblemDetector.enabled=true" \
-            --test=kops \
-            -- \
-            --test-args="-test.timeout=600m --num-nodes=3 --master-os-distro=ubuntu --node-os-distro=ubuntu" \
-            --focus-regex="\[Disruptive\]" \
-            --skip-regex="\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[KubeUp\]" \
-            --timeout=500m \
-            --use-built-binaries=true \
-            --parallel=1
-        command:
-        - runner.sh
-        image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260601-2cbf4bdb47-1.36
-        name: ""
-        resources:
-          limits:
-            cpu: "4"
-            memory: 14Gi
-          requests:
-            cpu: "4"
-            memory: 14Gi
-        securityContext:
-          privileged: true
-      serviceAccountName: k8s-kops-test
-  - always_run: false
-    branches:
-    - release-1.36
-    cluster: k8s-infra-prow-build
     context: pull-e2e-gce-cloud-provider-disabled
     decorate: true
     decoration_config:
@@ -2467,7 +2412,7 @@ presubmits:
         - --gcp-region=us-central1
         - --ginkgo-parallel=30
         - --provider=gce
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -3620,7 +3565,7 @@ presubmits:
         - --gcp-zone=us-central1-b
         - --ginkgo-parallel=30
         - --provider=gce
-        - --test_args=--ginkgo.skip=\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -4014,7 +3959,7 @@ presubmits:
   #       - --gcp-node-image=gci
   #       - --timeout=660m
   #       - --ginkgo-parallel=1
-  #       - --test_args=--ginkgo.focus=\[Serial\]|\[Disruptive\] --ginkgo.skip=\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]
+  #       - --test_args=--ginkgo.focus=\[Serial\] --ginkgo.skip=\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]
   #         --minStartupPods=8
   #       command:
   #       - runner.sh
@@ -4663,7 +4608,7 @@ presubmits:
           - -C "${PATH%%:*}/" && e2e-k8s.sh
         env:
         - name: LABEL_FILTER
-          value: 'Feature: isEmpty && !Slow && !Disruptive && !Flaky'
+          value: 'Feature: isEmpty && !Slow && !Flaky'
         - name: PARALLEL
           value: "true"
         image: gcr.io/k8s-staging-test-infra/krte:v20260601-ff716d044c-1.36
@@ -4701,7 +4646,7 @@ presubmits:
           - -C "${PATH%%:*}/" && e2e-k8s.sh
         env:
         - name: LABEL_FILTER
-          value: 'Feature: isEmpty && !Slow && !Disruptive && !Flaky'
+          value: 'Feature: isEmpty && !Slow && !Flaky'
         - name: PARALLEL
           value: "true"
         - name: DOCKER_IN_DOCKER_IPV6_ENABLED
@@ -4826,7 +4771,7 @@ presubmits:
           value: '{"api/beta":"true", "api/ga":"true"}'
         - name: LABEL_FILTER
           value: 'Feature: isSubsetOf OffByDefault && !Alpha && !Deprecated && !Slow
-            && !Disruptive && !Flaky'
+            && !Flaky'
         - name: PARALLEL
           value: "true"
         image: gcr.io/k8s-staging-test-infra/krte:v20260601-ff716d044c-1.36
@@ -4871,7 +4816,7 @@ presubmits:
         - name: FOCUS
         - name: SKIP
         - name: LABEL_FILTER
-          value: 'Feature: isEmpty && !Deprecated && !Slow && !Disruptive && !Flaky'
+          value: 'Feature: isEmpty && !Deprecated && !Slow && !Flaky'
         - name: PARALLEL
           value: "true"
         image: gcr.io/k8s-staging-test-infra/krte:v20260601-ff716d044c-1.36
@@ -4915,7 +4860,7 @@ presubmits:
         - name: FOCUS
         - name: SKIP
         - name: LABEL_FILTER
-          value: Conformance && !Deprecated && !Slow && !Disruptive && !Flaky
+          value: Conformance && !Deprecated && !Slow && !Flaky
         - name: PARALLEL
           value: "true"
         image: gcr.io/k8s-staging-test-infra/krte:v20260601-ff716d044c-1.36
@@ -4958,7 +4903,7 @@ presubmits:
         - name: RUNTIME_CONFIG
           value: '{"api/all":"true"}'
         - name: LABEL_FILTER
-          value: 'Feature: isSubsetOf OffByDefault && !Deprecated && !Slow && !Disruptive
+          value: 'Feature: isSubsetOf OffByDefault && !Deprecated && !Slow
             && !Flaky'
         - name: PARALLEL
           value: "true"
@@ -5004,7 +4949,7 @@ presubmits:
         - name: FOCUS
         - name: SKIP
         - name: LABEL_FILTER
-          value: 'Feature: isEmpty && !Deprecated && !Slow && !Disruptive && !Flaky'
+          value: 'Feature: isEmpty && !Deprecated && !Slow && !Flaky'
         - name: PARALLEL
           value: "true"
         image: gcr.io/k8s-staging-test-infra/krte:v20260601-ff716d044c-1.36
@@ -5049,7 +4994,7 @@ presubmits:
         - name: FOCUS
         - name: SKIP
         - name: LABEL_FILTER
-          value: Conformance && !Deprecated && !Slow && !Disruptive && !Flaky
+          value: Conformance && !Deprecated && !Slow && !Flaky
         - name: PARALLEL
           value: "true"
         image: gcr.io/k8s-staging-test-infra/krte:v20260601-ff716d044c-1.36
@@ -5091,7 +5036,7 @@ presubmits:
         - name: RUNTIME_CONFIG
           value: '{"api/all":"true"}'
         - name: LABEL_FILTER
-          value: 'Feature: isSubsetOf OffByDefault && !Deprecated && !Slow && !Disruptive
+          value: 'Feature: isSubsetOf OffByDefault && !Deprecated && !Slow
             && !Flaky'
         - name: PARALLEL
           value: "true"

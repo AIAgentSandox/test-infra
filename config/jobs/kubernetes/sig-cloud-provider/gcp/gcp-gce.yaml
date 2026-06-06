@@ -1,6 +1,6 @@
 periodics:
 - annotations:
-    description: Uses kubetest to run e2e tests (-Slow|Serial|Disruptive|Flaky|Feature)
+    description: Uses kubetest to run e2e tests (-Slow|Serial|Flaky|Feature)
       against a cluster created with cluster/kube-up.sh
     testgrid-alert-email: release-team@kubernetes.io
     testgrid-dashboards: sig-release-master-blocking
@@ -25,7 +25,7 @@ periodics:
       - --gcp-region=us-central1
       - --ginkgo-parallel=30
       - --provider=gce
-      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
         --minStartupPods=8
       - --timeout=120m
       - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
@@ -42,7 +42,7 @@ periodics:
           cpu: "2"
           memory: 6Gi
 - annotations:
-    description: Uses kubetest to run e2e tests (-Slow|Serial|Disruptive|Flaky|Feature)
+    description: Uses kubetest to run e2e tests (-Slow|Serial|Flaky|Feature)
       against a cluster (ubuntu based and uses containerd) created with cluster/kube-up.sh
     testgrid-alert-email: kubernetes-sig-testing-alerts@googlegroups.com, release-team@kubernetes.io
     testgrid-dashboards: sig-release-master-blocking
@@ -83,7 +83,7 @@ periodics:
       - --gcp-region=us-central1
       - --ginkgo-parallel=25
       - --provider=gce
-      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
         --minStartupPods=8
       - --timeout=80m
       command:
@@ -125,7 +125,7 @@ periodics:
       - --ginkgo-parallel=30
       - --provider=gce
       - --runtime-config=api/all=true
-      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|csi-hostpath-v0
+      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]|csi-hostpath-v0
         --minStartupPods=8
       - --timeout=70m
       command:
@@ -208,7 +208,7 @@ periodics:
       - --gcp-region=us-central1
       - --ginkgo-parallel=30
       - --provider=gce
-      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Feature:.+\]
+      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Feature:.+\]
         --minStartupPods=8
       - --timeout=50m
       command:
@@ -297,7 +297,7 @@ periodics:
           cpu: "1"
           memory: 3Gi
 - annotations:
-    description: Uses kubetest to run e2e tests (+Slow, -Serial|Disruptive|Flaky|Feature)
+    description: Uses kubetest to run e2e tests (+Slow, -Serial|Flaky|Feature)
       against a cluster created with cluster/kube-up.sh
     testgrid-alert-email: release-team@kubernetes.io
     testgrid-dashboards: sig-release-master-informing
@@ -322,7 +322,7 @@ periodics:
       - --gcp-node-image=gci
       - --gcp-region=us-central1
       - --provider=gce
-      - --test_args=--ginkgo.focus=\[Serial\]|\[Disruptive\] --ginkgo.skip=\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]
+      - --test_args=--ginkgo.focus=\[Serial\] --ginkgo.skip=\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]
         --minStartupPods=8
       - --timeout=500m
       command:
@@ -338,7 +338,7 @@ periodics:
           cpu: "1"
           memory: 3Gi
 - annotations:
-    description: Uses kubetest to run e2e tests (+Slow, -Serial|Disruptive|Flaky|Feature)
+    description: Uses kubetest to run e2e tests (+Slow, -Serial|Flaky|Feature)
       against a cluster created with cluster/kube-up.sh
     testgrid-alert-email: release-team@kubernetes.io
     testgrid-dashboards: sig-release-master-informing
@@ -362,7 +362,7 @@ periodics:
       - --gcp-region=us-central1
       - --ginkgo-parallel=30
       - --provider=gce
-      - --test_args=--ginkgo.focus=\[Slow\] --ginkgo.skip=\[Driver:.gcepd\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:([^L].*|L[^o].*|Lo[^a].*|Loa[^d].*)\]
+      - --test_args=--ginkgo.focus=\[Slow\] --ginkgo.skip=\[Driver:.gcepd\]|\[Serial\]|\[Flaky\]|\[Feature:([^L].*|L[^o].*|Lo[^a].*|Loa[^d].*)\]
         --minStartupPods=8
       - --timeout=150m
       command:
@@ -383,7 +383,7 @@ presubmits:
   - always_run: false
     optional: true # Optional because it does not always run. ci-kubernetes-e2e-gci-gce is release blocking.
     annotations:
-      description: Uses kubetest to run e2e tests (-Slow|Serial|Disruptive|Flaky|Feature)
+      description: Uses kubetest to run e2e tests (-Slow|Serial|Flaky|Feature)
         against a cluster created with cluster/kube-up.sh
       fork-per-release: "true"
       testgrid-alert-stale-results-hours: "24"
@@ -421,7 +421,7 @@ presubmits:
         - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHLIST_INCONSISTENCY_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHCACHE_CONSISTENCY_CHECKER=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=120m
         command:
@@ -474,7 +474,7 @@ presubmits:
         - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHLIST_INCONSISTENCY_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHCACHE_CONSISTENCY_CHECKER=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -527,7 +527,7 @@ presubmits:
         - --provider=gce
         - --env=LOG_DUMP_SYSTEMD_SERVICES=containerd
         - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -576,7 +576,7 @@ presubmits:
         - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHLIST_INCONSISTENCY_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHCACHE_CONSISTENCY_CHECKER=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -630,7 +630,7 @@ presubmits:
         - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHLIST_INCONSISTENCY_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHCACHE_CONSISTENCY_CHECKER=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -652,7 +652,7 @@ presubmits:
           privileged: true
   - always_run: true
     annotations:
-      description: Uses kubetest to run e2e tests (-Slow|Serial|Disruptive|Flaky|Feature)
+      description: Uses kubetest to run e2e tests (-Slow|Serial|Flaky|Feature)
         against a cluster created with cluster/kube-up.sh
       fork-per-release: "true"
       testgrid-alert-stale-results-hours: "24"
@@ -699,7 +699,7 @@ presubmits:
         - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHLIST_INCONSISTENCY_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHCACHE_CONSISTENCY_CHECKER=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -760,7 +760,7 @@ presubmits:
         - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHLIST_INCONSISTENCY_DETECTOR=true
         - --env=ENABLE_KUBE_WATCHCACHE_CONSISTENCY_CHECKER=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -831,7 +831,7 @@ presubmits:
             --test=kops \
             -- \
             --ginkgo-args="--debug" \
-            --skip-regex="\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|\[KubeUp\]" \
+            --skip-regex="\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]|\[KubeUp\]" \
             --timeout=80m \
             --use-built-binaries=true \
             --parallel=30
@@ -884,7 +884,7 @@ presubmits:
         - --env=KUBE_GCE_IMAGE_PROJECT=ubuntu-os-cloud
         - --
         - --provider=gce
-        - --skip-regex=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --skip-regex=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
         - --timeout=80m
         - --use-built-binaries=true
         - --parallel=30
@@ -939,7 +939,7 @@ presubmits:
         - --env=KUBE_GCE_IMAGE_PROJECT=ubuntu-os-cloud
         - --
         - --provider=gce
-        - --skip-regex=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --skip-regex=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
         - --timeout=80m
         - --use-built-binaries=true
         - --parallel=30
@@ -1062,7 +1062,7 @@ presubmits:
         - --gcp-region=us-central1
         - --ginkgo-parallel=1
         - --provider=gce
-        - --test_args=--ginkgo.focus=\[Serial\]|\[Disruptive\] --ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.focus=\[Serial\] --ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=500m
         command:
@@ -1149,66 +1149,6 @@ presubmits:
     cluster: k8s-infra-prow-build
     decorate: true
     decoration_config:
-      timeout: 10h30m0s
-    extra_refs:
-    - base_ref: master
-      org: kubernetes
-      path_alias: k8s.io/kops
-      repo: kops
-    labels:
-      preset-dind-enabled: "true"
-      preset-k8s-ssh: "true"
-      preset-storage-e2e-service-account: "true"
-    name: pull-kubernetes-e2e-gce-disruptive-canary
-    optional: true
-    path_alias: k8s.io/kubernetes
-    skip_branches:
-    - release-\d+\.\d+
-    spec:
-      containers:
-      - args:
-        - bash
-        - -c
-        - |
-          ARGS="--set=spec.containerd.runc.version=1.1.12  --set=spec.packages=nfs-common --set=spec.containerd.version=1.7.13"
-          make -C $GOPATH/src/k8s.io/kops test-e2e-install
-          kubetest2 kops -v=6 --cloud-provider=gce --up --down --build \
-            --build-kubernetes=true --target-build-arch=linux/amd64 \
-            --admin-access=0.0.0.0/0 \
-            --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci.txt \
-            --create-args "$ARGS --node-count=3 --networking=kubenet --gce-service-account=default --set=spec.nodeProblemDetector.enabled=true" \
-            --test=kops \
-            -- \
-            --test-args="-test.timeout=600m --num-nodes=3 --master-os-distro=ubuntu --node-os-distro=ubuntu" \
-            --focus-regex="\[Disruptive\]" \
-            --skip-regex="\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[KubeUp\]" \
-            --timeout=500m \
-            --use-built-binaries=true \
-            --parallel=1
-        command:
-        - runner.sh
-        image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260601-2cbf4bdb47-master
-        name: ""
-        resources:
-          limits:
-            cpu: "4"
-            memory: 14Gi
-          requests:
-            cpu: "4"
-            memory: 14Gi
-        securityContext:
-          privileged: true
-      serviceAccountName: k8s-kops-test
-  - always_run: false
-    annotations:
-      fork-per-release: "true"
-      testgrid-alert-stale-results-hours: "24"
-      testgrid-create-test-group: "true"
-      testgrid-dashboards: google-gce
-      testgrid-num-failures-to-alert: "10"
-    cluster: k8s-infra-prow-build
-    decorate: true
-    decoration_config:
       timeout: 2h0m0s
     extra_refs:
     - base_ref: master
@@ -1238,7 +1178,7 @@ presubmits:
         - --gcp-region=us-central1
         - --ginkgo-parallel=30
         - --provider=gce
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
           --minStartupPods=8
         - --timeout=80m
         command:
@@ -1297,7 +1237,7 @@ presubmits:
         - --ginkgo-parallel=30
         - --provider=gce
         - --runtime-config=api/all=true
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|csi-hostpath-v0
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]|csi-hostpath-v0
           --minStartupPods=8
         - --timeout=70m
         command:

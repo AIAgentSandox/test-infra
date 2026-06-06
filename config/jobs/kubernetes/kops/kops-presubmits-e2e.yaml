@@ -2370,7 +2370,7 @@ presubmits:
             --test-package-url=https://dl.k8s.io \
             --test-package-dir=ci \
             --test-package-marker=latest.txt \
-            --skip-regex="\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]" \
+            --skip-regex="\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]" \
             --parallel=25
         securityContext:
           privileged: true
@@ -2442,7 +2442,7 @@ presubmits:
             --test-package-dir=ci \
             --test-package-marker=latest.txt \
             --focus-regex="\[Slow\]" \
-            --skip-regex="\[Driver:.gcepd\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]" \
+            --skip-regex="\[Driver:.gcepd\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]" \
             --parallel=25
         securityContext:
           privileged: true

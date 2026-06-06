@@ -47,7 +47,7 @@ periodics:
         # Default is 4, but we want to exercise more log calls and get more output.
         value: "6"
       - name: LABEL_FILTER
-        value: 'Conformance && !Slow && !Disruptive && !Flaky'
+        value: 'Conformance && !Slow && !Flaky'
       - name: PARALLEL
         value: "true"
       # we need privileged mode in order to do docker in docker

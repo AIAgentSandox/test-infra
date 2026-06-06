@@ -159,7 +159,7 @@ periodics:
           --ginkgo-parallel=30 \
           --provider=gce \
           --timeout=150m \
-          --test_args="--ginkgo.skip=\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=8"
+          --test_args="--ginkgo.skip=\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=8"
         cd ../test-infra/gopherage
         GO111MODULE=on go build .
         ./gopherage merge "${ARTIFACTS}"/before/**/*.cov > "${ARTIFACTS}/before/merged.cov"
@@ -184,7 +184,7 @@ periodics:
           memory: 16Gi
   annotations:
     testgrid-dashboards: sig-testing-canaries
-    description: build instrumented kubernetes, run (non-slow/serial/disruptive/flaky/feature) e2e tests, generate line coverage using gopherage
+    description: build instrumented kubernetes, run (non-slow/serial/flaky/feature) e2e tests, generate line coverage using gopherage
 
 - interval: 1h
   name: ci-kubernetes-coverage-unit

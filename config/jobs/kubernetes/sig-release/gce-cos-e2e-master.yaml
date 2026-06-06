@@ -79,7 +79,7 @@ periodics:
       - --gcp-node-image=gci
       - --extract=ci/latest
       - --timeout=120m
-      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
         --minStartupPods=8
       - --ginkgo-parallel=30
       - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
@@ -169,7 +169,7 @@ periodics:
       - --extract=ci/latest
       - --timeout=660m
       - --ginkgo-parallel=1
-      - --test_args=--ginkgo.focus=\[Serial\]|\[Disruptive\] --ginkgo.skip=\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]
+      - --test_args=--ginkgo.focus=\[Serial\] --ginkgo.skip=\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]
         --minStartupPods=8
       command:
       - runner.sh
@@ -213,7 +213,7 @@ periodics:
       - --gcp-node-image=gci
       - --extract=ci/latest
       - --timeout=150m
-      - --test_args=--ginkgo.focus=\[Slow\] --ginkgo.skip=\[Driver:.gcepd\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:([^L].*|L[^o].*|Lo[^a].*|Loa[^d].*)\]
+      - --test_args=--ginkgo.focus=\[Slow\] --ginkgo.skip=\[Driver:.gcepd\]|\[Serial\]|\[Flaky\]|\[Feature:([^L].*|L[^o].*|Lo[^a].*|Loa[^d].*)\]
         --minStartupPods=8
       - --ginkgo-parallel=30
       command:
@@ -264,7 +264,7 @@ presubmits:
         - --gcp-node-image=gci
         - --timeout=660m
         - --ginkgo-parallel=1
-        - --test_args=--ginkgo.focus=\[Serial\]|\[Disruptive\] --ginkgo.skip=\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]
+        - --test_args=--ginkgo.focus=\[Serial\] --ginkgo.skip=\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]
           --minStartupPods=8
         command:
         - runner.sh

@@ -25,7 +25,7 @@ periodics:
       - name: "PARALLEL"
         value: "true"
       - name: LABEL_FILTER
-        value: "!Slow && !Disruptive && !Flaky && Feature: containsAny NetworkPolicy || Conformance"
+        value: "!Slow && !Flaky && Feature: containsAny NetworkPolicy || Conformance"
       - name: SKIP
         value: \[Feature:SCTPConnectivity\]
       command:
@@ -80,7 +80,7 @@ periodics:
       - name: "PARALLEL"
         value: "true"
       - name: LABEL_FILTER
-        value: "!Slow && !Disruptive && !Flaky && Feature: containsAny NetworkPolicy || Conformance"
+        value: "!Slow && !Flaky && Feature: containsAny NetworkPolicy || Conformance"
       - name: SKIP
         value: \[Feature:SCTPConnectivity\]
       command:

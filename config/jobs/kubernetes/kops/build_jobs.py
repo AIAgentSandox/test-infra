@@ -940,7 +940,7 @@ def generate_misc():
                    cloud="aws",
                    distro="al2023",
                    networking="cilium",
-                   skip_regex=r'\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|nfs|NFS|Gluster|NodeProblemDetector|fallback.to.local.terminating.endpoints.when.there.are.no.ready.endpoints.with.externalTrafficPolicy.Local|Services.*rejected.*endpoints|TCP.CLOSE_WAIT|external.IP.is.not.assigned.to.a.node|same.port.number.but.different.protocols|same.hostPort.but.different.hostIP.and.protocol|serve.endpoints.on.same.port.and.different.protocols|should.check.kube-proxy.urls|should.verify.that.all.nodes.have.volume.limits',
+                   skip_regex=r'\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]|nfs|NFS|Gluster|NodeProblemDetector|fallback.to.local.terminating.endpoints.when.there.are.no.ready.endpoints.with.externalTrafficPolicy.Local|Services.*rejected.*endpoints|TCP.CLOSE_WAIT|external.IP.is.not.assigned.to.a.node|same.port.number.but.different.protocols|same.hostPort.but.different.hostIP.and.protocol|serve.endpoints.on.same.port.and.different.protocols|should.check.kube-proxy.urls|should.verify.that.all.nodes.have.volume.limits',
                    runs_per_day=3,
                    extra_dashboards=['kops-misc']),
 
@@ -972,12 +972,12 @@ def generate_misc():
                    # - FeatureGate:SELinuxMount: the feature gate is alpha / disabled by default
                    #   in v1.32.
                    skip_regex=r"\[Feature:Volumes\]|\[Driver:.nfs\]|\[Driver:.nfs3\]|\[Driver:.local\]|\[FeatureGate:SELinuxMount\]",
-                   # [Serial] and [Disruptive] are intentionally not skipped, therefore run
+                   # [Serial] is intentionally not skipped, therefore run
                    # everything as serial.
                    test_parallelism=1,
                    # there is no "--node-os-distro=rhel", "custom" is as close as we can get here.
                    test_args="--master-os-distro=custom --node-os-distro=custom",
-                   # Serial and Disruptive tests can be slow.
+                   # Serial tests can be slow.
                    test_timeout_minutes=120,
                    runs_per_day=3,
                    alert_email="kubernetes-sig-storage-test-failures@googlegroups.com",
@@ -1012,12 +1012,12 @@ def generate_misc():
                    # - Feature:SELinuxMountReadWriteOncePodOnly: these tests require SELinuxMount
                    #   feature gate off.
                    skip_regex=r"\[Feature:Volumes\]|\[Driver:.nfs\]|\[Driver:.nfs3\]|\[Driver:.local\]|\[Feature:SELinuxMountReadWriteOncePodOnly\]",
-                   # [Serial] and [Disruptive] are intentionally not skipped, therefore run
+                   # [Serial] is intentionally not skipped, therefore run
                    # everything as serial.
                    test_parallelism=1,
                    # there is no "--node-os-distro=rhel", "custom" is as close as we can get here.
                    test_args="--master-os-distro=custom --node-os-distro=custom",
-                   # Serial and Disruptive tests can be slow.
+                   # Serial tests can be slow.
                    test_timeout_minutes=120,
                    runs_per_day=3,
                    alert_email="kubernetes-sig-storage-test-failures@googlegroups.com",
@@ -1035,7 +1035,7 @@ def generate_misc():
                        "--set=spec.nodeProblemDetector.enabled=true",
                        "--gce-service-account=default",
                    ],
-                   skip_regex=r'\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|\[KubeUp\]',
+                   skip_regex=r'\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]|\[KubeUp\]',
                    test_timeout_minutes=60,
                    extra_dashboards=["sig-cluster-lifecycle-kubeup-to-kops"],
                    runs_per_day=8),
@@ -1051,7 +1051,7 @@ def generate_misc():
                        "--set=spec.nodeProblemDetector.enabled=true",
                        "--set=spec.packages=nfs-utils",
                    ],
-                   skip_regex=r'\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]',
+                   skip_regex=r'\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]',
                    test_timeout_minutes=60,
                    extra_dashboards=["sig-cluster-lifecycle-kubeup-to-kops", "amazon-ec2-kops"],
                    runs_per_day=8),
@@ -1067,7 +1067,7 @@ def generate_misc():
                        "--set=spec.nodeProblemDetector.enabled=true",
                        "--set=spec.packages=nfs-common",
                    ],
-                   skip_regex=r'\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]',
+                   skip_regex=r'\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]',
                    test_timeout_minutes=60,
                    test_args="--master-os-distro=ubuntu --node-os-distro=ubuntu",
                    extra_dashboards=["sig-cluster-lifecycle-kubeup-to-kops"],
@@ -1085,7 +1085,7 @@ def generate_misc():
                        "--gce-service-account=default",
                    ],
                    focus_regex=r'\[Slow\]',
-                   skip_regex=r'\[Driver:.gcepd\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|\[KubeUp\]',
+                   skip_regex=r'\[Driver:.gcepd\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]|\[KubeUp\]',
                    test_timeout_minutes=150,
                    extra_dashboards=["sig-cluster-lifecycle-kubeup-to-kops"],
                    runs_per_day=6),
@@ -1102,7 +1102,7 @@ def generate_misc():
                        "--set=spec.packages=nfs-utils",
                    ],
                    focus_regex=r'\[Slow\]',
-                   skip_regex=r'\[Driver:.gcepd\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]',
+                   skip_regex=r'\[Driver:.gcepd\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]',
                    test_timeout_minutes=150,
                    extra_dashboards=["sig-cluster-lifecycle-kubeup-to-kops", "amazon-ec2-kops"],
                    runs_per_day=6),
@@ -1222,24 +1222,6 @@ def generate_misc():
                    extra_dashboards=["sig-cluster-lifecycle-kubeup-to-kops", "amazon-ec2-kops"],
                    runs_per_day=6),
 
-        build_test(name_override="ci-kubernetes-kops-cos-gce-disruptive-canary",
-                   cloud="gce",
-                   distro="cos125",
-                   networking="kindnet",
-                   k8s_version="ci",
-                   kops_version=marker_updown_green("master"),
-                   kops_channel="alpha",
-                   extra_flags=[
-                       "--node-count=3",
-                       "--gce-service-account=default",
-                   ],
-                   focus_regex=r'\[Disruptive\]',
-                   skip_regex=r'\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[KubeUp\]|\[sig-cloud-provider-gcp\]',
-                   test_timeout_minutes=600,
-                   test_parallelism=1, # serial tests
-                   extra_dashboards=["sig-cluster-lifecycle-kubeup-to-kops"],
-                   runs_per_day=3),
-
         build_test(name_override="ci-kubernetes-kops-cos-gce-reboot-canary",
                    cloud="gce",
                    distro="cos125",
@@ -1256,30 +1238,6 @@ def generate_misc():
                    test_timeout_minutes=300,
                    test_parallelism=1, # serial tests
                    extra_dashboards=["sig-cluster-lifecycle-kubeup-to-kops"],
-                   runs_per_day=3),
-
-        build_test(name_override="ci-kubernetes-kops-al2023-aws-disruptive-canary",
-                   cloud="aws",
-                   distro="al2023",
-                   networking="amazonvpc",
-                   k8s_version="ci",
-                   kops_version=marker_updown_green("master"),
-                   kops_channel="alpha",
-                   build_cluster="k8s-infra-kops-prow-build",
-                   extra_flags=[
-                       "--node-size=r5d.xlarge",
-                       "--control-plane-size=r5d.xlarge",
-                       *AMAZON_VPC_ENV_FLAGS,
-                       "--set=spec.kubeAPIServer.logLevel=4",
-                       "--set=spec.kubeAPIServer.auditLogMaxSize=2000000000",
-                       "--set=spec.kubeAPIServer.enableAggregatorRouting=true",
-                       "--set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log",
-                   ],
-                   focus_regex=r'\[Disruptive\]',
-                   skip_regex=r'\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]',
-                   test_timeout_minutes=500,
-                   test_parallelism=1, # serial tests
-                   extra_dashboards=["sig-cluster-lifecycle-kubeup-to-kops", "amazon-ec2-kops"],
                    runs_per_day=3),
 
         build_test(name_override="ci-kubernetes-kops-cos-gce-serial-canary",
@@ -2734,7 +2692,7 @@ def generate_presubmits_e2e():
                 "--node-volume-size=100",
                 "--gce-service-account=default",
             ],
-            skip_regex=r'\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]',
+            skip_regex=r'\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]',
             test_timeout_minutes=40,
             optional=True,
         ),
@@ -2751,7 +2709,7 @@ def generate_presubmits_e2e():
                 "--gce-service-account=default",
             ],
             focus_regex=r'\[Slow\]',
-            skip_regex=r'\[Driver:.gcepd\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]',
+            skip_regex=r'\[Driver:.gcepd\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]',
             test_timeout_minutes=70,
             optional=True,
         ),

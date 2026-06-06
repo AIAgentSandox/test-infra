@@ -21,7 +21,7 @@ periodics:
       - --gcp-node-image=gci
       - --gcp-zone=us-central1-b
       - --provider=gce
-      - --test_args=--ginkgo.focus=\[sig-cli\].*\[Serial\]|\[sig-cli\].*\[Disruptive\]
+      - --test_args=--ginkgo.focus=\[sig-cli\].*\[Serial\]
         --ginkgo.skip=\[Flaky\]|\[Feature:.+\] --minStartupPods=8
       - --timeout=500m
       command:
@@ -61,7 +61,7 @@ periodics:
       - --gcp-zone=us-central1-b
       - --ginkgo-parallel=30
       - --provider=gce
-      - --test_args=--ginkgo.focus=\[sig-cli\] --ginkgo.skip=\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]
+      - --test_args=--ginkgo.focus=\[sig-cli\] --ginkgo.skip=\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]
         --minStartupPods=8
       - --timeout=50m
       command:

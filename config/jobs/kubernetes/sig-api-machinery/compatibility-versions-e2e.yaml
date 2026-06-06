@@ -37,7 +37,7 @@ periodics:
       - name: VERSION_DELTA
         value: "1"
       - name: SKIP
-        value: Alpha|Disruptive|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
+        value: Alpha|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
       - name: PARALLEL
         value: "true"
       - name: FEATURE_GATES
@@ -94,7 +94,7 @@ periodics:
       - name: VERSION_DELTA
         value: "2"
       - name: SKIP
-        value: Alpha|Disruptive|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
+        value: Alpha|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
       - name: PARALLEL
         value: "true"
       - name: FEATURE_GATES
@@ -151,7 +151,7 @@ periodics:
       - name: VERSION_DELTA
         value: "3"
       - name: SKIP
-        value: Alpha|Disruptive|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
+        value: Alpha|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
       - name: PARALLEL
         value: "true"
       - name: FEATURE_GATES
@@ -318,7 +318,7 @@ periodics:
       - name: VERSION_DELTA
         value: "1"
       - name: SKIP
-        value: Alpha|Disruptive|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
+        value: Alpha|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
       - name: PARALLEL
         value: "true"
       - name: FEATURE_GATES
@@ -376,7 +376,7 @@ periodics:
       - name: VERSION_DELTA
         value: "2"
       - name: SKIP
-        value: Alpha|Disruptive|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
+        value: Alpha|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
       - name: PARALLEL
         value: "true"
       - name: FEATURE_GATES
@@ -434,7 +434,7 @@ periodics:
       - name: VERSION_DELTA
         value: "3"
       - name: SKIP
-        value: Alpha|Disruptive|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
+        value: Alpha|Slow|Flaky|IPv6|LoadBalancer|PodSecurityPolicy|nfs
       - name: PARALLEL
         value: "true"
       - name: FEATURE_GATES

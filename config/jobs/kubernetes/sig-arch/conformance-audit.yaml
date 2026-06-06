@@ -181,11 +181,11 @@ periodics:
       # FOCUS="" overrides the default [Conformance] focus to run all tests
       - name: FOCUS
         value: ""
-      # Skip: Driver:gcepd (GCE-specific), Slow, Disruptive, Flaky, Feature tests
+      # Skip: Driver:gcepd (GCE-specific), Slow, Flaky, Feature tests
       # Note: Serial tests are NOT skipped - Ginkgo v2 runs them automatically
       # after parallel tests complete, providing better API coverage for auditing.
       - name: SKIP
-        value: "\\[Driver:.gcepd\\]|\\[Slow\\]|\\[Disruptive\\]|\\[Flaky\\]|\\[Feature:.+\\]"
+        value: "\\[Driver:.gcepd\\]|\\[Slow\\]|\\[Flaky\\]|\\[Feature:.+\\]"
       - name: PARALLEL
         value: "true"
       # we need privileged mode in order to do docker in docker

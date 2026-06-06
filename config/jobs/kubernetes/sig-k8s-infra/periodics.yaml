@@ -131,7 +131,7 @@ periodics:
         - name: IP_FAMILY
           value: "ipv6"
         - name: LABEL_FILTER
-          value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+          value: "Feature: isEmpty && !Slow && !Flaky"
         - name: PARALLEL
           value: "true"
         # we need privileged mode in order to do docker in docker

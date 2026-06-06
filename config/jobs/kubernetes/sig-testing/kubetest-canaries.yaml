@@ -19,7 +19,7 @@ periodics:
       - --extract=ci/latest
       - --ginkgo-parallel=25
       - --provider=gce
-      - --test_args=--ginkgo.skip=\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=8
+      - --test_args=--ginkgo.skip=\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=8
       - --timeout=65m
       resources:
         limits:

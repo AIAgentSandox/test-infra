@@ -194,7 +194,7 @@ presubmits:
         - cd ./../../k8s.io/kubernetes && ./../../sigs.k8s.io/kind/hack/ci/e2e.sh
         env:
         - name: LABEL_FILTER
-          value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+          value: "Feature: isEmpty && !Slow && !Flaky"
         - name: PARALLEL
           value: "true"
         - name: IP_FAMILY
@@ -239,7 +239,7 @@ presubmits:
         - cd ./../../k8s.io/kubernetes && ./../../sigs.k8s.io/kind/hack/ci/e2e.sh
         env:
         - name: LABEL_FILTER
-          value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+          value: "Feature: isEmpty && !Slow && !Flaky"
         - name: PARALLEL
           value: "true"
         # we need privileged mode in order to do docker in docker
@@ -281,7 +281,7 @@ presubmits:
         - cd ./../../k8s.io/kubernetes && ./../../sigs.k8s.io/kind/hack/ci/e2e.sh
         env:
         - name: LABEL_FILTER
-          value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+          value: "Feature: isEmpty && !Slow && !Flaky"
         - name: PARALLEL
           value: "true"
         # we need privileged mode in order to do docker in docker
@@ -323,7 +323,7 @@ presubmits:
         - cd ./../../k8s.io/kubernetes && ./../../sigs.k8s.io/kind/hack/ci/e2e.sh
         env:
         - name: LABEL_FILTER
-          value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+          value: "Feature: isEmpty && !Slow && !Flaky"
         - name: PARALLEL
           value: "true"
         # we need privileged mode in order to do docker in docker
@@ -363,7 +363,7 @@ presubmits:
         - cd ./../../k8s.io/kubernetes && ./../../sigs.k8s.io/kind/hack/ci/e2e.sh
         env:
         - name: LABEL_FILTER
-          value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+          value: "Feature: isEmpty && !Slow && !Flaky"
         - name: PARALLEL
           value: "true"
         # we need privileged mode in order to do docker in docker
@@ -402,7 +402,7 @@ presubmits:
         - cd ./../../k8s.io/kubernetes && ./../../sigs.k8s.io/kind/hack/ci/e2e.sh
         env:
         - name: LABEL_FILTER
-          value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+          value: "Feature: isEmpty && !Slow && !Flaky"
         - name: PARALLEL
           value: "true"
         # we need privileged mode in order to do docker in docker
@@ -446,7 +446,7 @@ presubmits:
         # NOTE: changes should filter down to pull-kubernetes-e2e-kind-canary
         # and then pull-kubernetes-e2e-kind
         - name: SKIP
-          value: \[Slow\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|PodSecurityPolicy|LoadBalancer|load.balancer|Simple.pod.should.support.exec.through.an.HTTP.proxy|subPath.should.support.existing
+          value: \[Slow\]|\[Flaky\]|\[Feature:.+\]|PodSecurityPolicy|LoadBalancer|load.balancer|Simple.pod.should.support.exec.through.an.HTTP.proxy|subPath.should.support.existing
         - name: PARALLEL
           value: "true"
         # we need privileged mode in order to do docker in docker
@@ -490,7 +490,7 @@ presubmits:
         # NOTE: changes should filter down to pull-kubernetes-e2e-kind-canary
         # and then pull-kubernetes-e2e-kind
         - name: SKIP
-          value: \[Slow\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|PodSecurityPolicy|LoadBalancer|load.balancer|Simple.pod.should.support.exec.through.an.HTTP.proxy|subPath.should.support.existing
+          value: \[Slow\]|\[Flaky\]|\[Feature:.+\]|PodSecurityPolicy|LoadBalancer|load.balancer|Simple.pod.should.support.exec.through.an.HTTP.proxy|subPath.should.support.existing
         - name: PARALLEL
           value: "true"
         # we need privileged mode in order to do docker in docker

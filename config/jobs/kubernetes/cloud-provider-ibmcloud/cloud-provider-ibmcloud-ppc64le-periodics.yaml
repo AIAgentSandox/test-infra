@@ -268,7 +268,7 @@ periodics:
                 --extra-vars=runtime_config:api/all=true \
                 --build-version $(curl -Ls https://dl.k8s.io/ci/latest.txt) \
                 --test=ginkgo -- --parallel 15 --test-package-dir ci --test-package-marker latest.txt \
-                --skip-regex="\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|KubeProxy.should.update.metric"
+                --skip-regex="\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]|KubeProxy.should.update.metric"
 
   - name: ci-kubernetes-e2e-ppc64le-default
     cron: "0 6-22/8 * * *" # every 8h starting at 06:00 UTC
@@ -320,7 +320,7 @@ periodics:
                 --break-kubetest-on-upfail true \
                 --build-version $(curl -Ls https://dl.k8s.io/ci/latest.txt) \
                 --test=ginkgo -- --parallel 15 --test-package-dir ci --test-package-marker latest.txt \
-                --skip-regex="\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|KubeProxy.should.update.metric"
+                --skip-regex="\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\]|KubeProxy.should.update.metric"
 
   - name: ci-kubernetes-ppc64le-e2e-slow-kubetest2
     cron: "30 8-23/3 * * *" # every 3h starting at 08:30 UTC
@@ -372,7 +372,7 @@ periodics:
                 --up --down --auto-approve --retry-on-tf-failure 3 --ignore-destroy-errors\
                 --break-kubetest-on-upfail true \
                 --build-version $(curl -Ls https://dl.k8s.io/ci/latest.txt) \
-                --test=ginkgo -- --parallel 15 --test-package-dir ci --test-package-marker latest.txt --focus-regex='\[Slow\]' --skip-regex='\[Driver:.gcepd\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:'
+                --test=ginkgo -- --parallel 15 --test-package-dir ci --test-package-marker latest.txt --focus-regex='\[Slow\]' --skip-regex='\[Driver:.gcepd\]|\[Serial\]|\[Flaky\]|\[Feature:'
 
   - name: ci-kubernetes-e2e-ppc64le-serial-kubetest2
     cron: "30 9-17/8 * * *" # every 8h starting at 09:30 UTC
@@ -424,4 +424,4 @@ periodics:
                 --extra-vars="kubelet_extra_args:--max-pods 220" \
                 --build-version $(curl -Ls https://dl.k8s.io/ci/latest.txt) \
                 --test=ginkgo -- --parallel 1 --test-package-dir ci --test-package-marker latest.txt \
-                --focus-regex='\[Serial\]|\[Disruptive\]' --skip-regex='\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]'
+                --focus-regex='\[Serial\]' --skip-regex='\[Driver:.gcepd\]|\[Flaky\]|\[Feature:.+\]|\[sig-cloud-provider-gcp\]'

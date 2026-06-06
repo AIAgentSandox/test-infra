@@ -24,7 +24,7 @@ periodics:
       - --gcp-zone=us-central1-b
       - --ginkgo-parallel=25
       - --provider=gce
-      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=9
+      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=9
       - --timeout=60m
       image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260601-2cbf4bdb47-master
       resources:
@@ -61,7 +61,7 @@ periodics:
       - --gcp-zone=us-central1-b
       - --ginkgo-parallel=25
       - --provider=gce
-      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=9
+      - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=9
       - --timeout=60m
       image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260601-2cbf4bdb47-master
       resources:
@@ -186,7 +186,7 @@ periodics:
       - name: GOFLAGS
         value: "-tags=fieldsv1string"
       - name: LABEL_FILTER
-        value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+        value: "Feature: isEmpty && !Slow && !Flaky"
       - name: PARALLEL
         value: "true"
       securityContext:
@@ -237,7 +237,7 @@ presubmits:
         - --gcp-zone=us-central1-b
         - --ginkgo-parallel=30
         - --provider=gce
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=9
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=9
         - --timeout=80m
         image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260601-2cbf4bdb47-master
         resources:
@@ -287,7 +287,7 @@ presubmits:
         - --gcp-zone=us-central1-b
         - --ginkgo-parallel=30
         - --provider=gce
-        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=9
+        - --test_args=--ginkgo.skip=\[Driver:.gcepd\]|\[Slow\]|\[Serial\]|\[Flaky\]|\[Feature:.+\] --minStartupPods=9
         - --timeout=80m
         image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260601-2cbf4bdb47-master
         resources:
@@ -406,7 +406,7 @@ presubmits:
         - name: GOFLAGS
           value: "-tags=fieldsv1string"
         - name: LABEL_FILTER
-          value: "Feature: isEmpty && !Slow && !Disruptive && !Flaky"
+          value: "Feature: isEmpty && !Slow && !Flaky"
         - name: PARALLEL
           value: "true"
         securityContext:

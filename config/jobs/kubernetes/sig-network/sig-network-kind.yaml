@@ -32,7 +32,7 @@ presubmits:
         - name: FOCUS
           value: \[sig-network\]|\[Conformance\]
         - name: SKIP
-          value: Alpha|Beta|Disruptive|Flaky|Networking-IPv6|LoadBalancer|SCTPConnectivity
+          value: Alpha|Beta|Flaky|Networking-IPv6|LoadBalancer|SCTPConnectivity
         # we need privileged mode in order to do docker in docker
         securityContext:
           privileged: true
@@ -92,7 +92,7 @@ presubmits:
           value: \[sig-network\]|\[Conformance\]
         #  cloud-provider-kind implements loadbalancer in Proxy mode; it requires NodePort
         - name: SKIP
-          value: Alpha|Beta|Disruptive|Flaky|Networking-IPv6|IPv6DualStack|LoadBalancer.Service.without.NodePort|SCTPConnectivity
+          value: Alpha|Beta|Flaky|Networking-IPv6|IPv6DualStack|LoadBalancer.Service.without.NodePort|SCTPConnectivity
         # we need privileged mode in order to do docker in docker
         securityContext:
           privileged: true
@@ -145,7 +145,7 @@ presubmits:
         - name: FOCUS
           value: \[sig-network\]|\[Conformance\]
         - name: SKIP
-          value: Alpha|Beta|LoadBalancer|Disruptive|Flaky|Networking-IPv6|IPv6DualStack|SCTPConnectivity
+          value: Alpha|Beta|LoadBalancer|Flaky|Networking-IPv6|IPv6DualStack|SCTPConnectivity
         # we need privileged mode in order to do docker in docker
         securityContext:
           privileged: true
@@ -197,7 +197,7 @@ presubmits:
               value: \[sig-network\]|\[Conformance\]
             # FIXME: AdmissionWebhooks flakes https://issues.k8s.io/128230
             - name: SKIP
-              value: Alpha|Beta|LoadBalancer|Disruptive|Flaky|Networking-IPv6|IPv6DualStack|AdmissionWebhook|SCTPConnectivity
+              value: Alpha|Beta|LoadBalancer|Flaky|Networking-IPv6|IPv6DualStack|AdmissionWebhook|SCTPConnectivity
           # we need privileged mode in order to do docker in docker
           securityContext:
             privileged: true
@@ -245,7 +245,7 @@ presubmits:
         - name: FOCUS
           value: \[sig-network\]|\[Conformance\]
         - name: SKIP
-          value: Alpha|Beta|LoadBalancer|Disruptive|Flaky|Networking-IPv6|IPv6DualStack|SCTPConnectivity
+          value: Alpha|Beta|LoadBalancer|Flaky|Networking-IPv6|IPv6DualStack|SCTPConnectivity
         # we need privileged mode in order to do docker in docker
         securityContext:
           privileged: true
@@ -290,7 +290,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|LoadBalancer|Disruptive|Flaky|Networking-IPv6|IPv6DualStack|PerformanceDNS|SCTPConnectivity
+        value: Alpha|Beta|LoadBalancer|Flaky|Networking-IPv6|IPv6DualStack|PerformanceDNS|SCTPConnectivity
       # we need privileged mode in order to do docker in docker
       securityContext:
         privileged: true
@@ -340,7 +340,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|LoadBalancer|Disruptive|Flaky|Networking-IPv4|IPv6DualStack|Internet.connection|PerformanceDNS|upstream.nameserver|SCTPConnectivity
+        value: Alpha|Beta|LoadBalancer|Flaky|Networking-IPv4|IPv6DualStack|Internet.connection|PerformanceDNS|upstream.nameserver|SCTPConnectivity
       # we need privileged mode in order to do docker in docker
       securityContext:
         privileged: true
@@ -394,7 +394,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|LoadBalancer|Disruptive|Flaky|Networking-IPv6|SCTPConnectivity
+        value: Alpha|Beta|LoadBalancer|Flaky|Networking-IPv6|SCTPConnectivity
       # we need privileged mode in order to do docker in docker
       securityContext:
         privileged: true
@@ -443,7 +443,7 @@ periodics:
         value: \[sig-network\]|\[Conformance\]
       # FIXME: AdmissionWebhooks flakes https://issues.k8s.io/128230
       - name: SKIP
-        value: Alpha|Beta|LoadBalancer|Disruptive|Flaky|Networking-IPv6|IPv6DualStack|AdmissionWebhook|SCTPConnectivity
+        value: Alpha|Beta|LoadBalancer|Flaky|Networking-IPv6|IPv6DualStack|AdmissionWebhook|SCTPConnectivity
       # we need privileged mode in order to do docker in docker
       securityContext:
         privileged: true
@@ -491,7 +491,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|LoadBalancer|Disruptive|Flaky|IPv6DualStack|Networking-IPv6|Internet.connection|SCTPConnectivity
+        value: Alpha|Beta|LoadBalancer|Flaky|IPv6DualStack|Networking-IPv6|Internet.connection|SCTPConnectivity
       # we need privileged mode in order to do docker in docker
       securityContext:
         privileged: true
@@ -544,7 +544,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|LoadBalancer|Disruptive|Flaky|IPv6DualStack|Networking-IPv4|Internet.connection|SCTPConnectivity
+        value: Alpha|Beta|LoadBalancer|Flaky|IPv6DualStack|Networking-IPv4|Internet.connection|SCTPConnectivity
       # we need privileged mode in order to do docker in docker
       securityContext:
         privileged: true
@@ -598,7 +598,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Disruptive|Flaky|IPv6DualStack|Networking-IPv6|Internet.connection|SCTPConnectivity
+        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Flaky|IPv6DualStack|Networking-IPv6|Internet.connection|SCTPConnectivity
       # we need privileged mode in order to do docker in docker
       securityContext:
         privileged: true
@@ -639,7 +639,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Disruptive|Flaky|IPv6DualStack|Networking-IPv6|Internet.connection|SCTPConnectivity
+        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Flaky|IPv6DualStack|Networking-IPv6|Internet.connection|SCTPConnectivity
       command:
         - wrapper.sh
         - bash
@@ -690,7 +690,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Disruptive|Flaky|IPv6DualStack|Networking-IPv4|Internet.connection|SCTPConnectivity
+        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Flaky|IPv6DualStack|Networking-IPv4|Internet.connection|SCTPConnectivity
       command:
         - wrapper.sh
         - bash
@@ -742,7 +742,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Disruptive|Flaky|IPv6|IPv6DualStack|SCTPConnectivity
+        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Flaky|IPv6|IPv6DualStack|SCTPConnectivity
       # we need privileged mode in order to do docker in docker
       securityContext:
         privileged: true
@@ -791,7 +791,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Disruptive|Flaky|IPv6|IPv6DualStack|SCTPConnectivity
+        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Flaky|IPv6|IPv6DualStack|SCTPConnectivity
       - name: KUBE_PROXY_DETECT_LOCAL_MODE
         value: NodeCIDR
       # we need privileged mode in order to do docker in docker
@@ -842,7 +842,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Disruptive|Flaky|IPv6|IPv6DualStack|SCTPConnectivity
+        value: Alpha|Beta|NetworkPolicy|LoadBalancer|Flaky|IPv6|IPv6DualStack|SCTPConnectivity
       - name: KUBE_PROXY_DETECT_LOCAL_MODE
         value: InterfaceNamePrefix
       # we need privileged mode in order to do docker in docker
@@ -899,7 +899,7 @@ periodics:
       - name: FOCUS
         value: \[sig-network\]|\[Conformance\]
       - name: SKIP
-        value: Alpha|Beta|LoadBalancer.Service.without.NodePort|NetworkPolicy|Disruptive|Flaky|IPv6|SCTPConnectivity|IPerf2
+        value: Alpha|Beta|LoadBalancer.Service.without.NodePort|NetworkPolicy|Flaky|IPv6|SCTPConnectivity|IPerf2
       # cloud-provider-kind implements loadbalancer in Proxy mode; it requires NodePort
       # we need privileged mode in order to do docker in docker
       securityContext:
@@ -950,7 +950,7 @@ periodics:
       - name: RUNTIME_CONFIG
         value: '{"api/all":"true"}'
       - name: LABEL_FILTER
-        value: "(Conformance || sig-network ) && !Feature: containsAny {Networking-IPv6, LoadBalancer, IPv6DualStack} && !Disruptive && !Flaky"
+        value: "(Conformance || sig-network ) && !Feature: containsAny {Networking-IPv6, LoadBalancer, IPv6DualStack} && !Flaky"
       - name: SKIP
         value: SCTPConnectivity
       - name: PARALLEL
